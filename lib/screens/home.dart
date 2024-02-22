@@ -108,14 +108,14 @@ class _HomeState extends State<Home> {
                   child: Text(
                     '+',
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: 30,
                     ),
                   ),
                   onPressed: () {
                     _addToDoItem(_todoController.text);
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: tdGreen,
+                    primary: tdBGColor,
                     minimumSize: Size(60, 60),
                     elevation: 10,
                   ),
@@ -152,6 +152,7 @@ class _HomeState extends State<Home> {
 
   void _runFilter(String enteredKeyword) {
     List<ToDo> results = [];
+
     if (enteredKeyword.isEmpty) {
       results = todosList;
     } else {
@@ -201,9 +202,17 @@ class _HomeState extends State<Home> {
       elevation: 0,
       title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         Icon(
-          Icons.menu,
+          Icons.apps_sharp,
           color: tdBlack,
           size: 30,
+        ),
+        Text(
+          'To Do App',
+          style: TextStyle(
+            color: tdBlack,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         Container(
           height: 40,
